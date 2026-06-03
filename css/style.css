@@ -855,10 +855,6 @@ a { text-decoration: none; transition: all 0.3s ease; }
 /* ---- Navbar always-visible controls ---- */
 .navbar-always {
   flex-shrink: 0;
-  order: -1;
-}
-@media (min-width: 992px) {
-  .navbar-always { order: unset; ms-auto: unset; }
 }
 
 /* ---- Menu item hidden state ---- */
