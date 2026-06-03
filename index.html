@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRDVVIP | Super Restaurant Dakéré VVIP à Douala</title>
+  <meta name="description" content="Restaurant haut de gamme à Bessengue Douala proposant Dakéré, grillades, poissons braisés, restauration sur place, réservations, événements privés et bien d'autres." />
+  <meta name="keywords" content="restaurant douala, dakere douala, restaurant bessengue, restaurant vvip douala, poisson braisé douala, restaurant cameroun" />
+  <meta name="author" content="SRDVVIP" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#accueil">
+        <img src="logo_SRD2.png" alt="SRDVVIP Logo" height="55" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#accueil" data-i18n="nav.home">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#apropos" data-i18n="nav.about">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu" data-i18n="nav.menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galerie" data-i18n="nav.gallery">Galerie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#temoignages" data-i18n="nav.testimonials">Témoignages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="#reservation" class="btn btn-gold btn-sm" data-i18n="nav.reserve">Réserver</a>
+          <a href="https://wa.me/237650763338" target="_blank" class="btn btn-whatsapp btn-sm">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+          <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">🌙</button>
+          <div class="lang-switch">
+            <button class="lang-btn active" data-lang="fr">FR</button>
+            <span>|</span>
+            <button class="lang-btn" data-lang="en">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="accueil" class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container text-center" data-aos="fade-up" data-aos-duration="1200">
+      <p class="hero-tag" data-i18n="hero.tag">🍽️ Excellence Culinaire Camerounaise</p>
+      <h1 class="hero-title" data-i18n="hero.title">Bienvenue au <span class="gold-text">SRDVVIP</span></h1>
+      <p class="hero-sub" data-i18n="hero.subtitle">Découvrez l'excellence culinaire camerounaise dans un cadre élégant et raffiné.</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+        <a href="#menu" class="btn btn-gold btn-lg" data-i18n="hero.btn1">Voir notre menu</a>
+        <a href="https://wa.me/237650763338" target="_blank" class="btn btn-outline-gold btn-lg">
+          <i class="fab fa-whatsapp me-2"></i><span data-i18n="hero.btn2">Commander via WhatsApp</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="stat-item">
+            <span class="stat-number">13+</span>
+            <span class="stat-label" data-i18n="stats.dishes">Spécialités</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label" data-i18n="stats.clients">Clients satisfaits</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="stat-item">
+            <span class="stat-number">7/7</span>
+            <span class="stat-label" data-i18n="stats.days">Jours ouverts</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-item">
+            <span class="stat-number">VVIP</span>
+            <span class="stat-label" data-i18n="stats.experience">Expérience unique</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== À PROPOS ===== -->
+  <section id="apropos" class="section-pad">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="about-images">
+            <img src="SRD_VVIP/facade_SRDVVIP.jpg" alt="SRDVVIP Facade" class="about-img-main" />
+            <img src="SRD_VVIP/facade_SRDVVIP2.jpg" alt="SRDVVIP Intérieur" class="about-img-secondary" />
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <p class="section-tag" data-i18n="about.tag">Notre Histoire</p>
+          <h2 class="section-title" data-i18n="about.title">Un Restaurant <span class="gold-text">d'Exception</span></h2>
+          <p class="section-text" data-i18n="about.desc">Le SRDVVIP est un restaurant haut de gamme situé à Bessengue, face à la Polyclinique de la Gare à Douala. Nous proposons une cuisine savoureuse, un service de qualité et une expérience culinaire unique dans un cadre accueillant.</p>
+          <div class="row g-3 mt-2">
+            <div class="col-6">
+              <div class="about-card">
+                <i class="fas fa-star gold-text fa-2x mb-2"></i>
+                <h5 data-i18n="about.mission.title">Notre Mission</h5>
+                <p data-i18n="about.mission.desc">Offrir une expérience gastronomique inoubliable à chaque visite.</p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="about-card">
+                <i class="fas fa-heart gold-text fa-2x mb-2"></i>
+                <h5 data-i18n="about.values.title">Nos Valeurs</h5>
+                <p data-i18n="about.values.desc">Qualité, passion, hygiène et excellence au service de nos clients.</p>
+              </div>
+            </div>
+          </div>
+          <a href="#reservation" class="btn btn-gold mt-4" data-i18n="about.btn">Réserver une table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU / SPÉCIALITÉS ===== -->
+  <section id="menu" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="menu.tag">Nos Plats</p>
+        <h2 class="section-title" data-i18n="menu.title">Nos <span class="gold-text">Spécialités</span></h2>
+        <p class="section-sub" data-i18n="menu.sub">Chaque plat est préparé avec des ingrédients frais et beaucoup de passion.</p>
+      </div>
+
+      <!-- Filtre -->
+      <div class="menu-filter text-center mb-4" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Tous</button>
+        <button class="filter-btn" data-filter="plat" data-i18n="filter.dishes">Plats</button>
+        <button class="filter-btn" data-filter="boisson" data-i18n="filter.drinks">Boissons</button>
+      </div>
+
+      <div class="row g-4" id="menuGrid">
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="0">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/lait_dakere.jpg" alt="Dakéré" />
+              <span class="menu-badge" data-i18n="badge.specialty">Spécialité</span>
+            </div>
+            <div class="menu-body">
+              <h4>Dakéré</h4>
+              <p data-i18n="menu.dakere.desc">Notre plat signature : du mil savamment préparé avec une sauce riche et épicée.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander du Dakéré" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="50">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/riz_sénégalais.jpg" alt="Riz sénégalais" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.rizsen.name">Riz Sénégalais</h4>
+              <p data-i18n="menu.rizsen.desc">Riz parfumé cuisiné à la sénégalaise, savoureux et généreux.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander du Riz Sénégalais" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="100">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/riz_parfume.jpg" alt="Riz blanc parfumé" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.rizb.name">Riz Blanc Parfumé</h4>
+              <p data-i18n="menu.rizb.desc">Riz blanc de qualité, parfumé et accompagné de sauces maison.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander du Riz Blanc Parfumé" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="150">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/spaghettis_macaronis.jpg" alt="Spaghetti Macaronis" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.spag.name">Spaghetti Macaronis</h4>
+              <p data-i18n="menu.spag.desc">Pâtes savoureuses préparées avec une sauce maison généreuse.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander des Spaghetti Macaronis" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="200">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/pommes_plantain_viande.jpg" alt="Pommes Plantain Viande" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.plantain.name">Pommes Plantain Viande</h4>
+              <p data-i18n="menu.plantain.desc">Plantains dorés accompagnés d'une viande tendre et bien assaisonnée.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander des Pommes Plantain Viande" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="250">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/poulet.jpg" alt="Poulet" />
+              <span class="menu-badge menu-badge-hot" data-i18n="badge.popular">Populaire</span>
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.poulet.name">Poulet</h4>
+              <p data-i18n="menu.poulet.desc">Poulet grillé ou braisé, mariné aux épices africaines et cuit à la perfection.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>3 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander du Poulet" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="300">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/frites.jpg" alt="Frites" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.frites.name">Frites</h4>
+              <p data-i18n="menu.frites.desc">Frites croustillantes et dorées, parfaites en accompagnement.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>500 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander des Frites" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="350">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/eru.jpg" alt="Eru" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.eru.name">Eru</h4>
+              <p data-i18n="menu.eru.desc">Plat traditionnel camerounais aux légumes et viandes fumées, riche en saveurs.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 500 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander de l'Eru" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="400">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/couscous.jpg" alt="Couscous" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.couscous.name">Couscous</h4>
+              <p data-i18n="menu.couscous.desc">Couscous moelleux accompagné d'une sauce généreuse et de légumes.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>2 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander du Couscous" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="plat" data-aos="fade-up" data-aos-delay="450">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/shawarma.jpg" alt="Shawarma" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.shawarma.name">Shawarma</h4>
+              <p data-i18n="menu.shawarma.desc">Shawarma généreux garni de viande tendre, légumes frais et sauces maison.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander un Shawarma" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="boisson" data-aos="fade-up" data-aos-delay="500">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/boissons.jpg" alt="Boissons" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.boissons.name">Boissons</h4>
+              <p data-i18n="menu.boissons.desc">Large choix de boissons fraîches, jus naturels et sodas pour accompagner votre repas.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander une Boisson" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4 menu-item" data-category="boisson" data-aos="fade-up" data-aos-delay="550">
+          <div class="menu-card">
+            <div class="menu-img-wrap">
+              <img src="SRD_VVIP/eau_pure.jpg" alt="Eau Minérale" />
+            </div>
+            <div class="menu-body">
+              <h4 data-i18n="menu.eau.name">Eau Minérale</h4>
+              <p data-i18n="menu.eau.desc">Eau minérale pure et fraîche pour rester hydraté tout au long du repas.</p>
+              <div class="menu-footer">
+                <span class="menu-price">À partir de <strong>500 FCFA</strong></span>
+                <a href="https://wa.me/237650763338?text=Je voudrais commander de l'Eau Minérale" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <p class="menu-more" data-i18n="menu.more">Et bien d'autres spécialités vous attendent...</p>
+        <a href="https://wa.me/237650763338?text=Bonjour, je voudrais voir votre menu complet" target="_blank" class="btn btn-gold" data-i18n="menu.cta">Voir le menu complet sur WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERIE ===== -->
+  <section id="galerie" class="section-pad">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="gallery.tag">Nos Images</p>
+        <h2 class="section-title" data-i18n="gallery.title">Notre <span class="gold-text">Galerie</span></h2>
+      </div>
+      <div class="gallery-grid" data-aos="fade-up">
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/facade_SRDVVIP.jpg" alt="Facade SRDVVIP" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/facade_SRDVVIP2.jpg" alt="SRDVVIP Vue 2" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/facade_SRDVVIP3.jpg" alt="SRDVVIP Vue 3" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/lait_dakere.jpg" alt="Dakéré" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/poulet.jpg" alt="Poulet" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/shawarma.jpg" alt="Shawarma" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/couscous.jpg" alt="Couscous" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/eru.jpg" alt="Eru" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+        <div class="gallery-item" onclick="openLightbox(this)">
+          <img src="SRD_VVIP/frites.jpg" alt="Frites" />
+          <div class="gallery-overlay"><i class="fas fa-expand-alt"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImg" src="" alt="Vue agrandie" />
+  </div>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="services.tag">Ce que nous offrons</p>
+        <h2 class="section-title" data-i18n="services.title">Nos <span class="gold-text">Services</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-utensils"></i></div>
+            <h5 data-i18n="services.onsite.title">Restauration sur place</h5>
+            <p data-i18n="services.onsite.desc">Profitez d'un cadre élégant et d'une ambiance VVIP pour savourer vos repas.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-shopping-bag"></i></div>
+            <h5 data-i18n="services.takeaway.title">Commandes à emporter</h5>
+            <p data-i18n="services.takeaway.desc">Passez votre commande et récupérez vos plats rapidement, emballés avec soin.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-motorcycle"></i></div>
+            <h5 data-i18n="services.delivery.title">Livraison</h5>
+            <p data-i18n="services.delivery.desc">Nous livrons vos plats préférés directement à votre porte.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+            <h5 data-i18n="services.reservation.title">Réservations de tables</h5>
+            <p data-i18n="services.reservation.desc">Réservez votre table à l'avance pour garantir votre place.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-glass-cheers"></i></div>
+            <h5 data-i18n="services.events.title">Événements privés</h5>
+            <p data-i18n="services.events.desc">Organisez vos événements privés dans notre espace exclusif.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+            <h5 data-i18n="services.corporate.title">Repas d'entreprise</h5>
+            <p data-i18n="services.corporate.desc">Solutions de restauration pour vos réunions et déjeuners d'affaires.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-birthday-cake"></i></div>
+            <h5 data-i18n="services.birthday.title">Anniversaires</h5>
+            <p data-i18n="services.birthday.desc">Célébrez vos anniversaires dans un cadre festif et élégant.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="700">
+          <div class="service-card text-center">
+            <div class="service-icon"><i class="fas fa-ring"></i></div>
+            <h5 data-i18n="services.reception.title">Réceptions</h5>
+            <p data-i18n="services.reception.desc">Mariages, baptêmes, cérémonies — nous gérons tout avec élégance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horaires -->
+      <div class="hours-block mt-5" data-aos="fade-up">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-6">
+            <h3 class="gold-text mb-3" data-i18n="hours.title">⏰ Horaires d'ouverture</h3>
+            <div class="hours-list">
+              <div class="hours-row" data-i18n-days="hours.everyday">
+                <span data-i18n="hours.day">Tous les jours</span>
+                <span class="hours-time">10:00 – 23:00</span>
+              </div>
+            </div>
+            <p class="hours-note mt-3" data-i18n="hours.note">* Ouvert 7j/7, de mercredi à mardi.</p>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="open-badge">
+              <i class="fas fa-door-open fa-3x gold-text mb-3"></i>
+              <p class="open-text" data-i18n="hours.open">Nous sommes <span class="gold-text">ouverts aujourd'hui</span> — Venez nous rendre visite !</p>
+              <a href="#reservation" class="btn btn-gold mt-2" data-i18n="hours.btn">Réserver maintenant</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POURQUOI NOUS CHOISIR ===== -->
+  <section class="section-pad why-section">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="why.tag">Nos Atouts</p>
+        <h2 class="section-title" data-i18n="why.title">Pourquoi nous <span class="gold-text">choisir ?</span></h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="0">
+          <div class="why-card">
+            <i class="fas fa-leaf fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.fresh.title">Produits Frais</h5>
+            <p data-i18n="why.fresh.desc">Nous sélectionnons uniquement des ingrédients frais et de qualité pour chaque plat.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="why-card">
+            <i class="fas fa-bolt fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.fast.title">Service Rapide</h5>
+            <p data-i18n="why.fast.desc">Notre équipe efficace garantit un service rapide sans compromis sur la qualité.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="why-card">
+            <i class="fas fa-crown fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.vvip.title">Cadre VVIP</h5>
+            <p data-i18n="why.vvip.desc">Un environnement luxueux et raffiné pour une expérience culinaire d'exception.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="why-card">
+            <i class="fas fa-shield-alt fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.hygiene.title">Hygiène Irréprochable</h5>
+            <p data-i18n="why.hygiene.desc">Nos normes d'hygiène sont strictes pour garantir votre santé et votre sécurité.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="400">
+          <div class="why-card">
+            <i class="fas fa-user-tie fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.staff.title">Personnel Qualifié</h5>
+            <p data-i18n="why.staff.desc">Une équipe formée et passionnée, toujours à votre écoute pour un service impeccable.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-aos="zoom-in" data-aos-delay="500">
+          <div class="why-card">
+            <i class="fas fa-tags fa-2x gold-text mb-3"></i>
+            <h5 data-i18n="why.price.title">Excellent Rapport Qualité-Prix</h5>
+            <p data-i18n="why.price.desc">Des tarifs accessibles pour une qualité de restaurant haut de gamme.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÉMOIGNAGES ===== -->
+  <section id="temoignages" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="testi.tag">Ils nous font confiance</p>
+        <h2 class="section-title" data-i18n="testi.title">Avis de nos <span class="gold-text">Clients</span></h2>
+      </div>
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="testi-card text-center">
+                  <div class="testi-avatar"><img src="https://ui-avatars.com/api/?name=Marie+Ngono&background=D4AF37&color=111&bold=true&size=80" alt="Marie Ngono" /></div>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text" data-i18n="testi.1.text">"Un restaurant exceptionnel ! Le Dakéré est à tomber par terre. Le cadre est élégant, le service impeccable. Je recommande vivement à tous les amateurs de cuisine camerounaise."</p>
+                  <h5 class="testi-name">Marie Ngono</h5>
+                  <span class="testi-role" data-i18n="testi.1.role">Cliente fidèle, Douala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="testi-card text-center">
+                  <div class="testi-avatar"><img src="https://ui-avatars.com/api/?name=Jean+Mbarga&background=D4AF37&color=111&bold=true&size=80" alt="Jean Mbarga" /></div>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text" data-i18n="testi.2.text">"J'organise régulièrement des déjeuners d'affaires ici. Le professionnalisme de l'équipe et la qualité des plats sont toujours au rendez-vous. Meilleur restaurant de Bessengue !"</p>
+                  <h5 class="testi-name">Jean Mbarga</h5>
+                  <span class="testi-role" data-i18n="testi.2.role">Homme d'affaires, Douala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="testi-card text-center">
+                  <div class="testi-avatar"><img src="https://ui-avatars.com/api/?name=Sophie+Bello&background=D4AF37&color=111&bold=true&size=80" alt="Sophie Bello" /></div>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text" data-i18n="testi.3.text">"J'ai célébré mon anniversaire ici et ce fut une soirée mémorable ! Tout était parfait : la décoration, la nourriture et surtout l'accueil chaleureux. Merci SRDVVIP !"</p>
+                  <h5 class="testi-name">Sophie Bello</h5>
+                  <span class="testi-role" data-i18n="testi.3.role">Étudiante, Douala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <div class="testi-card text-center">
+                  <div class="testi-avatar"><img src="https://ui-avatars.com/api/?name=Paul+Kamga&background=D4AF37&color=111&bold=true&size=80" alt="Paul Kamga" /></div>
+                  <div class="testi-stars">★★★★★</div>
+                  <p class="testi-text" data-i18n="testi.4.text">"Le meilleur Eru que j'ai jamais mangé à Douala ! Les prix sont très abordables pour la qualité proposée. Le service est rapide et le personnel très sympa."</p>
+                  <h5 class="testi-name">Paul Kamga</h5>
+                  <span class="testi-role" data-i18n="testi.4.role">Ingénieur, Douala</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators testi-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RÉSERVATION ===== -->
+  <section id="reservation" class="section-pad reservation-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="text-center mb-5">
+            <p class="section-tag" data-i18n="res.tag">Réserver votre table</p>
+            <h2 class="section-title" data-i18n="res.title">Faites votre <span class="gold-text">Réservation</span></h2>
+            <p data-i18n="res.sub">Remplissez le formulaire ci-dessous et nous vous confirmerons votre réservation.</p>
+          </div>
+          <form id="reservationForm" class="reservation-form" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="res.name">Nom complet *</label>
+                <input type="text" class="form-control" id="resName" required placeholder="Votre nom" />
+                <div class="invalid-feedback" data-i18n="res.name.err">Veuillez entrer votre nom.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" data-i18n="res.phone">Téléphone *</label>
+                <input type="tel" class="form-control" id="resPhone" required placeholder="+237 6XX XX XX XX" />
+                <div class="invalid-feedback" data-i18n="res.phone.err">Veuillez entrer votre numéro de téléphone.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" data-i18n="res.persons">Nombre de personnes *</label>
+                <select class="form-select" id="resPersons" required>
+                  <option value="" data-i18n="res.persons.placeholder">Sélectionner</option>
+                  <option value="1">1 personne</option>
+                  <option value="2">2 personnes</option>
+                  <option value="3">3 personnes</option>
+                  <option value="4">4 personnes</option>
+                  <option value="5">5 personnes</option>
+                  <option value="6+">6+ personnes</option>
+                </select>
+                <div class="invalid-feedback" data-i18n="res.persons.err">Sélectionnez le nombre de personnes.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" data-i18n="res.date">Date *</label>
+                <input type="date" class="form-control" id="resDate" required />
+                <div class="invalid-feedback" data-i18n="res.date.err">Choisissez une date.</div>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label" data-i18n="res.time">Heure *</label>
+                <input type="time" class="form-control" id="resTime" required min="10:00" max="22:30" />
+                <div class="invalid-feedback" data-i18n="res.time.err">Choisissez une heure (10h–23h).</div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" data-i18n="res.msg">Message (optionnel)</label>
+                <textarea class="form-control" id="resMessage" rows="3" placeholder="Demandes spéciales, allergies, occasion particulière..."></textarea>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-gold btn-lg px-5" data-i18n="res.submit">Réserver maintenant</button>
+              </div>
+            </div>
+          </form>
+          <div id="formSuccess" class="alert-success-custom d-none text-center mt-4">
+            <i class="fas fa-check-circle fa-2x gold-text mb-2"></i>
+            <p data-i18n="res.success">Votre réservation a été envoyée ! Nous vous contacterons très bientôt pour confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section-pad section-alt">
+    <div class="container">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <p class="section-tag" data-i18n="contact.tag">Nous trouver</p>
+        <h2 class="section-title" data-i18n="contact.title">Nous <span class="gold-text">Contacter</span></h2>
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h5 data-i18n="contact.address">Adresse</h5>
+                <p>Bessengue, face Polyclinique de la Gare<br />Douala, Cameroun</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h5>WhatsApp</h5>
+                <p>+237 650 76 33 38</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h5 data-i18n="contact.phone">Téléphone</h5>
+                <p>+237 659 76 33 38</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h5>Email</h5>
+                <p>srdvvip6@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          <div class="contact-btns mt-4 d-flex flex-wrap gap-3">
+            <a href="tel:+237659763338" class="btn btn-gold">
+              <i class="fas fa-phone me-2"></i><span data-i18n="contact.call">Appeler</span>
+            </a>
+            <a href="https://wa.me/237650763338" target="_blank" class="btn btn-whatsapp">
+              <i class="fab fa-whatsapp me-2"></i>WhatsApp
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=SRD+VVIP+Douala" target="_blank" class="btn btn-outline-gold">
+              <i class="fas fa-directions me-2"></i><span data-i18n="contact.directions">Itinéraire</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.642331465884!2d9.7101229!3d4.0568598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10611340da7ad245%3A0x79e07dfe8068bee6!2sSRD%20VVIP%20-%20Super%20Restaurant%20Dakere%20VVIP%20by%20MRCOM!5e0!3m2!1sfr!2scm!4v1780481802994!5m2!1sfr!2scm"
+              width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" title="SRDVVIP sur Google Maps">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-5 footer-top">
+        <div class="col-lg-4" data-aos="fade-up">
+          <img src="logo_SRD2.png" alt="SRDVVIP Logo" height="70" class="mb-3" />
+          <p data-i18n="footer.desc">Un restaurant haut de gamme au cœur de Douala, offrant une expérience culinaire camerounaise exceptionnelle dans un cadre VVIP.</p>
+          <div class="social-links mt-3">
+            <a href="https://www.facebook.com/share/1Lho5AjWmk/?mibextid=wwXIfr" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.tiktok.com/@al_khalif_creative" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.google.com/search?q=srd+vvip" target="_blank" aria-label="Google"><i class="fab fa-google"></i></a>
+            <a href="https://wa.me/237650763338" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+          <h5 class="footer-heading" data-i18n="footer.links">Liens Rapides</h5>
+          <ul class="footer-links">
+            <li><a href="#accueil" data-i18n="nav.home">Accueil</a></li>
+            <li><a href="#apropos" data-i18n="nav.about">À propos</a></li>
+            <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+            <li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li>
+            <li><a href="#reservation" data-i18n="nav.reserve">Réservation</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <h5 class="footer-heading" data-i18n="footer.hours">Horaires</h5>
+          <div class="footer-hours">
+            <div class="fh-row">
+              <span data-i18n="hours.everyday">Tous les jours</span>
+              <span>10:00 – 23:00</span>
+            </div>
+          </div>
+          <p class="mt-3 footer-note" data-i18n="footer.open247">Ouvert 7 jours sur 7</p>
+        </div>
+        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <h5 class="footer-heading" data-i18n="footer.contact">Contact</h5>
+          <p><i class="fas fa-map-marker-alt gold-text me-2"></i>Bessengue, face Polyclinique de la Gare, Douala</p>
+          <p><i class="fab fa-whatsapp gold-text me-2"></i>+237 650 76 33 38</p>
+          <p><i class="fas fa-phone gold-text me-2"></i>+237 659 76 33 38</p>
+          <p><i class="fas fa-envelope gold-text me-2"></i>srdvvip6@gmail.com</p>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom text-center">
+        <p data-i18n="footer.copy">© 2026 SRDVVIP - Super Restaurant Dakéré VVIP. Tous droits réservés.</p>
+        <p class="footer-credit">Conçu avec ❤️ pour l'excellence culinaire camerounaise</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING BUTTONS ===== -->
+  <a href="https://wa.me/237650763338?text=Bonjour SRDVVIP, je souhaite avoir plus d'informations." target="_blank" class="float-whatsapp" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

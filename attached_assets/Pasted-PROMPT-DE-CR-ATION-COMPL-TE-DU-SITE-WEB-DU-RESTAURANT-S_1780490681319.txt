@@ -1,0 +1,228 @@
+PROMPT DE CRÉATION COMPLÈTE DU SITE WEB DU RESTAURANT SRDVVIP
+Agis comme un développeur Full Stack senior, expert en UX/UI Design, SEO, Responsive Design et optimisation des performances.
+Je souhaite que tu développes un site vitrine moderne, premium, élégant et entièrement responsive pour un restaurant situé à Douala au Cameroun.
+Informations de l'entreprise
+Nom du restaurant :
+SRDVVIP (Super Restaurant Dakéré VVIP)
+Localisation :
+Bessengue, face Polyclinique de la Gare, Douala - Cameroun
+Contact WhatsApp :
++237 650 76 33 38
+Contact Appel :
++237 659 76 33 38
+Le restaurant possède déjà son logo que j'ajouterai ultérieurement.
+________________________________________
+Objectif du site
+Le site doit :
+•	Présenter le restaurant
+•	Mettre en valeur les plats
+•	Attirer de nouveaux clients
+•	Permettre aux visiteurs de contacter rapidement le restaurant
+•	Générer davantage de réservations
+•	Renforcer l'image haut de gamme du restaurant
+________________________________________
+Style visuel recherché
+Créer un design :
+•	Moderne
+•	Premium
+•	Élégant
+•	Luxueux
+•	Professionnel
+•	Inspirant confiance
+Palette recommandée :
+•	Noir profond (#111111)
+•	Doré luxe (#D4AF37)
+•	Blanc (#FFFFFF)
+•	Gris clair (#F5F5F5)
+Effets :
+•	Animations fluides
+•	Transitions élégantes
+•	Effets au scroll
+•	Ombres modernes
+•	Cartes interactives
+•	Boutons premium
+Icône toggle (Theme sombre de base) sans avoir besoin de recharger la page :
+•	🌙 Lune → activer le dark mode
+•	☀️ Soleil → activer le light mode
+Transition fluide entre les thèmes (CSS transition : all 0.3s ease).
+Traduction Multilingue FR/EN sans avoir besoin de recharger la page
+________________________________________
+Structure complète du site
+1. Header fixe
+Contient :
+•	Logo SRDVVIP 
+•	Menu de navigation 
+•	Bouton Réserver (style premium) 
+•	Bouton WhatsApp 
+•	Toggle Dark/Light Mode (icône lune/soleil) 
+•	Sélecteur de langue FR | EN
+Menu :
+•	Accueil
+•	À propos
+•	Menu
+•	Galerie
+•	Services
+•	Témoignages
+•	Contact
+________________________________________
+2. Section Hero
+Grande bannière immersive avec image de fond restaurant.
+Titre :
+"Bienvenue au SRDVVIP"
+Sous-titre :
+"Découvrez l'excellence culinaire camerounaise dans un cadre élégant et raffiné."
+Boutons :
+•	Voir notre menu
+•	Commander via WhatsApp
+Ajouter une animation moderne d'apparition.
+________________________________________
+3. Section À propos
+Présentation du restaurant :
+Le SRDVVIP est un restaurant haut de gamme située à Bessengue, face à la Polyclinique de la Gare à Douala. Nous proposons une cuisine savoureuse, un service de qualité et une expérience culinaire unique dans un cadre accueillant.
+Inclure :
+•	Mission
+•	Valeurs
+•	Photos du cadre
+________________________________________
+4. Section Nos Spécialités
+Créer des cartes attractives présentant :
+•	Dakéré (A partir de 1000 FCFA)
+•	Riz sénégalais (A partir de 1000 FCFA)
+•	Riz blanc parfume (A partir de 1000 FCFA)
+•	Spaghetti macaronis (A partir de 1000 FCFA)
+•	Pommes Plantain Viande (A partir de 1000 FCFA)
+•	Poulet (A partir de 3000 FCFA)
+•	Frites (A partir de 500 FCFA)
+•	Eru (A partir de 1500 FCFA)
+•	Couscous (A partir de 2000 FCFA)
+•	Boissons (A partir de 1000 FCFA)
+•	Shawarma (A partir de 1000FCFA)
+•	Eau minérale (A partir de 500FCFA)
+•	Et bien d’autres…
+Chaque carte doit contenir :
+•	Image
+•	Nom du plat
+•	Description
+•	Prix (modifiable depuis le code)
+Animations au survol.
+________________________________________
+6. Nos Services (Icones si possibles)
+Afficher sous forme de cartes :
+✓ Restauration sur place
+✓ Commandes à emporter
+✓ Livraison
+✓ Réservations de tables
+✓ Événements privés
+✓ Repas d'entreprise
+✓ Anniversaires
+✓ Réceptions
+Horaire d’ouverture et de Fermeture : 
+mercredi	•	10:00–23:00	
+jeudi	•	10:00–23:00	
+vendredi	•	10:00–23:00	
+samedi	•	10:00–23:00	
+ dimanche	•	10:00–23:00	
+lundi	•	10:00–23:00	
+mardi	•	10:00–23:00	
+
+________________________________________
+7. Pourquoi nous choisir ?
+Afficher (Icones) :
+•	Produits frais
+•	Service rapide
+•	Cadre VVIP
+•	Hygiène irréprochable
+•	Personnel qualifié
+•	Excellent rapport qualité-prix
+Utiliser des icônes professionnelles.
+________________________________________
+8. Témoignages Clients
+Créer un carrousel dynamique avec :
+•	Nom client
+•	Photo
+•	Note étoilée
+•	Avis
+Prévoir des données fictives modifiables.
+________________________________________
+9. Réservation
+Créer un formulaire :
+•	Nom
+•	Téléphone
+•	Nombre de personnes
+•	Date
+•	Heure
+•	Message
+Validation des champs.
+Bouton :
+"Réserver maintenant"
+________________________________________
+10. Contact
+Afficher :
+Adresse (Localisation) :
+Bessengue face Polyclinique de la Gare
+Douala - Cameroun
+WhatsApp :
++237 650 76 33 38
+Téléphone :
++237 659 76 33 38
+Email :
+srdvvip6@gmail.com
+Boutons :
+•	Appeler
+•	WhatsApp
+•	Itinéraire Google Maps
+Intégrer une carte Google Maps. Intégrer directement la carte Google Maps officielle du restaurant SRDVVIP à l'aide du code Embed Google Maps afin d'afficher l'emplacement exact du restaurant sans utiliser Google Maps API.
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.642331465884!2d9.7101229!3d4.0568598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10611340da7ad245%3A0x79e07dfe8068bee6!2sSRD%20VVIP%20-%20Super%20Restaurant%20Dakere%20VVIP%20by%20MRCOM!5e0!3m2!1sfr!2scm!4v1780481802994!5m2!1sfr!2scm" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+________________________________________
+11. Footer Premium
+Contient :
+•	Logo
+•	Liens rapides
+•	Coordonnées
+•	Réseaux sociaux (Logo avec liens vers réseaux)
+Facebook : https://www.facebook.com/share/1Lho5AjWmk/?mibextid=wwXIfr
+Tiktok : https://www.tiktok.com/@al_khalif_creative/video/7525102819658009861?is_from_webapp=1&sender_device=pc
+Google : https://www.google.com/search?q=srd+vvip&sca_esv=417d7c30b6c96843&biw=1366&bih=641&sxsrf=ANbL-n6C-lQsdau1M5rjYctXYIfy1F_7mA%3A1780485631099&ei=_w0gaqnjBbythbIPxMm44QE&ved=0ahUKEwjp3sbs-eqUAxW8VkEAHcQkLhwQ4dUDCBA&uact=5&oq=srd+vvip&gs_lp=Egxnd3Mtd2l6LXNlcnAiCHNyZCB2dmlwMgoQIxjJAhjwBRgnMgQQIxgnMgcQIxjJAhgnMgYQABgWGB4yAhAmMgUQABjvBTIFEAAY7wUyBRAAGO8FMgUQABjvBTIFEAAY7wVI9RhQnA1Y3xVwA3gAkAEAmAG0AqAB1QqqAQUyLTMuMrgBA8gBAPgBAZgCBKAC5wLCAggQABjvBRiwA8ICCxAAGIAEGKIEGLADmAMAiAYBkAYEkgcFMy4zLTGgB80VsgcDMy0xuAe6AsIHBzItMS4yLjHIBzuACAE&sclient=gws-wiz-serp
+•	Copyright
+Texte :
+© 2026 SRDVVIP - Super Restaurant Dakéré VVIP. Tous droits réservés.
+________________________________________
+Fonctionnalités techniques
+Le site doit être :
+•	Responsive Mobile
+•	Responsive Tablette
+•	Responsive Desktop
+•	Optimisé SEO
+•	Accessible
+•	Rapide à charger
+•	Compatible Chrome, Firefox, Edge et Safari
+________________________________________
+SEO
+Configurer :
+Title :
+SRDVVIP | Super Restaurant Dakéré VVIP à Douala
+Meta Description :
+Restaurant haut de gamme à Bessengue Douala proposant Dakéré, grillades, poissons braisés, restauration sur place, réservations, événements privés et bien d’autres.
+Mots-clés :
+restaurant douala, dakere douala, restaurant bessengue, restaurant vvip douala, poisson braisé douala, restaurant cameroun
+________________________________________
+Technologies souhaitées
+Utiliser :
+•	HTML5
+•	CSS3
+•	JavaScript moderne
+•	Bootstrap 5 ou Tailwind CSS
+•	PHP natif si besoin est
+•	Font Awesome
+•	AOS Animation
+Code propre et commenté.
+________________________________________
+Bonus Premium
+Ajouter :
+•	Bouton WhatsApp flottant
+•	Bouton Retour en haut
+•	Animations au scroll
+•	Effets parallaxe
+•	Dark mode élégant
+•	Optimisation Lighthouse supérieure à 90
+
