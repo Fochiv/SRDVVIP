@@ -28,6 +28,15 @@
       <a class="navbar-brand" href="#accueil">
         <img src="logo_SRD2.png" alt="SRDVVIP Logo" height="55" />
       </a>
+      <!-- Always-visible controls (never collapse) -->
+      <div class="d-flex align-items-center gap-2 ms-auto me-2 navbar-always">
+        <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <div class="lang-switch">
+          <button class="lang-btn active" data-lang="fr">FR</button>
+          <span>|</span>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -46,12 +55,6 @@
           <a href="https://wa.me/237650763338" target="_blank" class="btn btn-whatsapp btn-sm">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
-          <button class="btn-theme" id="themeToggle" aria-label="Toggle theme">🌙</button>
-          <div class="lang-switch">
-            <button class="lang-btn active" data-lang="fr">FR</button>
-            <span>|</span>
-            <button class="lang-btn" data-lang="en">EN</button>
-          </div>
         </div>
       </div>
     </div>
@@ -61,7 +64,7 @@
   <section id="accueil" class="hero-section">
     <div class="hero-overlay"></div>
     <div class="hero-content container text-center" data-aos="fade-up" data-aos-duration="1200">
-      <p class="hero-tag" data-i18n="hero.tag">🍽️ Excellence Culinaire Camerounaise</p>
+      <p class="hero-tag" data-i18n="hero.tag"><i class="fas fa-utensils me-2"></i>Excellence Culinaire Camerounaise</p>
       <h1 class="hero-title" data-i18n="hero.title">Bienvenue au <span class="gold-text">SRDVVIP</span></h1>
       <p class="hero-sub" data-i18n="hero.subtitle">Découvrez l'excellence culinaire camerounaise dans un cadre élégant et raffiné.</p>
       <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
@@ -489,14 +492,14 @@
       <div class="hours-block mt-5" data-aos="fade-up">
         <div class="row align-items-center g-4">
           <div class="col-lg-6">
-            <h3 class="gold-text mb-3" data-i18n="hours.title">⏰ Horaires d'ouverture</h3>
+            <h3 class="gold-text mb-3" data-i18n="hours.title"><i class="fas fa-clock me-2"></i>Horaires d'ouverture</h3>
             <div class="hours-list">
               <div class="hours-row" data-i18n-days="hours.everyday">
                 <span data-i18n="hours.day">Tous les jours</span>
                 <span class="hours-time">10:00 – 23:00</span>
               </div>
             </div>
-            <p class="hours-note mt-3" data-i18n="hours.note">* Ouvert 7j/7, de mercredi à mardi.</p>
+            <p class="hours-note mt-3" data-i18n="hours.note">Ouvert 7j/7, de Lundi à Dimanche.</p>
           </div>
           <div class="col-lg-6 text-center">
             <div class="open-badge">
@@ -731,21 +734,21 @@
               <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
               <div>
                 <h5>WhatsApp</h5>
-                <p>+237 650 76 33 38</p>
+                <p><a href="https://wa.me/237650763338" target="_blank" class="contact-link">+237 650 76 33 38</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
               <div>
                 <h5 data-i18n="contact.phone">Téléphone</h5>
-                <p>+237 659 76 33 38</p>
+                <p><a href="tel:+237659763338" class="contact-link">+237 659 76 33 38</a></p>
               </div>
             </div>
             <div class="contact-item">
               <div class="contact-icon"><i class="fas fa-envelope"></i></div>
               <div>
                 <h5>Email</h5>
-                <p>srdvvip6@gmail.com</p>
+                <p><a href="https://mail.google.com/mail/?view=cm&to=srdvvip6@gmail.com" target="_blank" class="contact-link">srdvvip6@gmail.com</a></p>
               </div>
             </div>
           </div>
@@ -819,7 +822,6 @@
       <hr class="footer-divider" />
       <div class="footer-bottom text-center">
         <p data-i18n="footer.copy">© 2026 SRDVVIP - Super Restaurant Dakéré VVIP. Tous droits réservés.</p>
-        <p class="footer-credit">Conçu avec ❤️ pour l'excellence culinaire camerounaise</p>
       </div>
     </div>
   </footer>
