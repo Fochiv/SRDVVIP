@@ -8,6 +8,8 @@ $error = null;
 $editing = null;
 $categories = [];
 $menus = [];
+$menuFormOpen = false;
+$categoryFormOpen = false;
 if ($pdo) {
     $categories = $pdo->query('SELECT * FROM categories ORDER BY name')->fetchAll();
     $menus = $pdo->query('SELECT m.*, c.name category_name FROM menus m JOIN categories c ON c.id = m.category_id ORDER BY m.display_order, m.id')->fetchAll();
@@ -18,6 +20,8 @@ if ($pdo) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo) {
     require_csrf();
     $action = (string) ($_POST['action'] ?? '');
+    $menuFormOpen = $action === 'save';
+    $categoryFormOpen = $action === 'category';
     try {
         if ($action === 'category') {
             $name = trim((string) ($_POST['name'] ?? ''));
@@ -80,6 +84,7 @@ if (isset($_GET['edit']) && $pdo) {
     $statement->execute([filter_var($_GET['edit'], FILTER_VALIDATE_INT)]);
     $editing = $statement->fetch() ?: null;
 }
+$menuFormOpen = $menuFormOpen || $editing !== null;
 
 admin_header('Menus & catégories');
 ?>

@@ -21,6 +21,7 @@ function admin_header(string $title): void
     <body class="admin-body">
       <div class="admin-shell">
         <aside class="admin-sidebar" id="adminSidebar">
+          <button class="admin-menu-close" id="adminMenuClose" type="button" aria-label="Fermer le menu"><i class="fas fa-xmark"></i></button>
           <a href="dashboard.php" class="admin-brand"><img src="../logo_SRD2.png" alt="SRDVVIP" height="58"><span>Administration</span></a>
           <nav class="admin-nav">
             <a href="dashboard.php"><i class="fas fa-chart-line"></i> Tableau de bord</a>
@@ -33,6 +34,7 @@ function admin_header(string $title): void
             <a href="logout.php"><i class="fas fa-right-from-bracket"></i> Déconnexion</a>
           </div>
         </aside>
+        <div class="admin-sidebar-backdrop" id="adminSidebarBackdrop"></div>
         <div class="admin-main">
           <header class="admin-topbar">
             <button class="admin-menu-toggle" id="adminMenuToggle" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
@@ -56,8 +58,22 @@ function admin_footer(): void
         </div>
       </div>
       <script>
-        document.getElementById('adminMenuToggle')?.addEventListener('click', () => {
-          document.getElementById('adminSidebar')?.classList.toggle('open');
+        const adminSidebar = document.getElementById('adminSidebar');
+        const adminMenuToggle = document.getElementById('adminMenuToggle');
+        const adminMenuClose = document.getElementById('adminMenuClose');
+        const adminSidebarBackdrop = document.getElementById('adminSidebarBackdrop');
+        const setAdminMenuOpen = (open) => {
+          adminSidebar?.classList.toggle('open', open);
+          adminSidebarBackdrop?.classList.toggle('visible', open);
+          document.body.classList.toggle('admin-menu-open', open);
+          adminMenuToggle?.setAttribute('aria-expanded', String(open));
+        };
+        adminMenuToggle?.addEventListener('click', () => setAdminMenuOpen(true));
+        adminMenuClose?.addEventListener('click', () => setAdminMenuOpen(false));
+        adminSidebarBackdrop?.addEventListener('click', () => setAdminMenuOpen(false));
+        adminSidebar?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setAdminMenuOpen(false)));
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') setAdminMenuOpen(false);
         });
         async function refreshPendingBadge() {
           try {
