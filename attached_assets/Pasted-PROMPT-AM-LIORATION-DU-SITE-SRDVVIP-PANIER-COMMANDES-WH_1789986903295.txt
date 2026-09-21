@@ -1,0 +1,334 @@
+PROMPT — AMÉLIORATION DU SITE SRDVVIP : PANIER, COMMANDES WHATSAPP ET ESPACE ADMIN
+Tu dois développer et intégrer les fonctionnalités suivantes au site vitrine du restaurant SRDVVIP (Super Restaurant Dakere VVIP).
+Le projet est développé avec :
+•	PHP
+•	MySQL
+•	JavaScript
+•	Bootstrap
+•	HTML5
+•	CSS3
+Le site doit rester entièrement responsive et mobile-first.
+L'objectif est de conserver le caractère premium du site SRDVVIP tout en ajoutant un véritable système de panier, de commandes et d'administration.
+________________________________________
+PARTIE 1 — ESPACE UTILISATEUR
+1. Ajout au panier
+Dans la section présentant les menus/plats du restaurant, chaque plat doit disposer d'un bouton :
+"Ajouter au panier"
+Chaque plat doit afficher au minimum :
+•	Photo
+•	Nom du plat
+•	Description
+•	Prix
+•	Bouton "Ajouter au panier"
+Lorsqu'un utilisateur clique sur "Ajouter au panier", le produit est ajouté au panier sans recharger inutilement la page.
+Afficher un indicateur du nombre d'articles dans le panier dans la barre de navigation.
+Exemple :
+Panier (3)
+Le panier doit pouvoir contenir plusieurs plats différents.
+________________________________________
+2. Gestion des quantités
+L'utilisateur doit pouvoir choisir la quantité de chaque plat.
+Dans le panier, chaque ligne doit contenir :
+•	Photo du plat
+•	Nom
+•	Prix unitaire
+•	Quantité
+•	Bouton -
+•	Quantité actuelle
+•	Bouton +
+•	Sous-total
+•	Bouton supprimer
+Exemple :
+Poulet-braisé
+2 500 FCFA × 2 = 5 000 FCFA
+Le prix total doit être recalculé automatiquement avec JavaScript.
+________________________________________
+3. Panier
+Créer une véritable page :
+/panier.php
+Elle doit afficher :
+•	Tous les plats sélectionnés
+•	Quantités
+•	Prix unitaires
+•	Sous-totaux
+•	Total général
+•	Bouton "Continuer mes achats"
+•	Bouton "Passer la commande"
+Si le panier est vide, afficher une interface élégante :
+"Votre panier est actuellement vide."
+Avec un bouton :
+"Découvrir notre menu"
+________________________________________
+4. Informations du client
+Avant de finaliser la commande, demander (Champs obligatoire):
+•	Nom complet
+•	Numéro de téléphone
+•	Numéro WhatsApp
+•	Adresse / lieu de livraison
+•	Mode de récupération
+Le mode de récupération doit proposer :
+•	Livraison
+•	À emporter
+•	Sur place
+Si "Livraison" est sélectionné, l'adresse devient obligatoire.
+Si "Sur place" est sélectionné, proposer éventuellement :
+•	Nombre de personnes
+•	Heure souhaitée
+Tous les champs doivent être correctement validés côté client ET côté serveur.
+________________________________________
+5. Création de la commande
+IMPORTANT :
+Lorsqu'un client valide sa commande, le système doit d'abord enregistrer la commande dans MySQL.
+Chaque commande doit recevoir un identifiant unique.
+Exemple :
+CMD-2026-000125
+La commande doit être enregistrée avant la redirection vers WhatsApp.
+Cela permet à l'administrateur de retrouver la commande même si le client ferme WhatsApp ou quitte la page.
+________________________________________
+6. Commande via WhatsApp
+Après l'enregistrement réussi de la commande, générer automatiquement un message WhatsApp contenant toutes les informations de la commande.
+Le message doit être envoyé vers :
++237659763338
+Le message doit avoir une structure professionnelle similaire à :
+"Bonjour SRDVVIP,
+Je souhaite passer la commande suivante :
+Commande : CMD-2026-000125
+Plats :
+•	Poulet braisé × 2 : 5 000 FCFA
+•	Poisson braisé × 1 : 3 500 FCFA
+•	Frites × 2 : 2 000 FCFA
+Total : 10 500 FCFA
+Nom : Jean Dupont
+Téléphone : +237 XXX XXX XXX
+Mode : Livraison
+Adresse : Bessengue...
+Instructions : ...
+Merci."
+Utiliser une URL WhatsApp correctement encodée afin que les caractères spéciaux et les retours à la ligne fonctionnent correctement.
+IMPORTANT :
+Ne jamais considérer l'envoi WhatsApp comme la seule sauvegarde de la commande.
+La commande doit aussi exister dans MySQL.
+________________________________________
+8. Panier persistant
+Utiliser JavaScript et localStorage pour conserver temporairement le panier lorsqu'un utilisateur navigue entre les différentes pages du site.
+Lorsqu'une commande est finalisée avec succès :
+•	vider le panier local
+•	conserver la commande dans MySQL
+________________________________________
+PARTIE 2 — ESPACE ADMINISTRATION
+Créer un espace d'administration complètement séparé de la partie publique.
+URL : /admin/login.php
+L'espace admin doit être totalement responsive et optimisé pour mobile, tablette et ordinateur.
+________________________________________
+9. Authentification administrateur
+Créer une page de connexion sécurisée :
+/admin/login.php
+Champs :
+•	Identifiant ou email : SRDVVIP
+•	Mot de passe : SRDVVIP@2026
+Utiliser :
+•	password_hash()
+•	password_verify()
+•	Sessions PHP
+•	Protection CSRF
+•	Validation serveur
+•	Requêtes préparées PDO ou MySQLi
+Ne jamais stocker les mots de passe en clair.
+Les pages admin doivent être inaccessibles sans authentification.
+Si un utilisateur non connecté tente d'accéder à :
+/admin/dashboard.php
+il doit automatiquement être redirigé vers :
+/admin/login.php
+Prévoir également :
+•	Déconnexion
+•	Protection contre les tentatives abusives de connexion
+________________________________________
+10. Dashboard administrateur
+Créer une page :
+/admin/dashboard.php
+Le dashboard doit afficher des statistiques sous forme de cartes :
+•	Nombre total de menus
+•	Commandes en attente
+•	Commandes livrées
+•	Commandes du jour
+Créer une interface moderne.
+________________________________________
+11. Gestion des menus — CRUD COMPLET
+Créer une page : /admin/menus.php
+L'administrateur doit pouvoir :
+Ajouter un menu
+Informations :
+•	Nom du plat
+•	Description
+•	Prix (En FCFA)
+•	Catégorie
+•	Image
+•	Disponibilité
+•	Ordre d'affichage
+Bouton :
+"Ajouter le menu"
+________________________________________
+Modifier un menu
+L'administrateur doit pouvoir modifier toutes les informations du plat.
+________________________________________
+Supprimer un menu
+Avant suppression, afficher une confirmation.
+Ne pas supprimer accidentellement un plat.
+Prévoir éventuellement une suppression logique avec un champ :
+is_active
+afin de pouvoir désactiver temporairement un plat sans supprimer définitivement ses données.
+________________________________________
+Gérer la disponibilité
+Chaque menu doit avoir un statut :
+•	Disponible
+•	Indisponible
+Un plat indisponible ne doit pas pouvoir être ajouté au panier.
+________________________________________
+12. Gestion des catégories
+Prévoir des catégories de menus.
+Exemples :
+•	Plats
+•	Boissons
+L'administrateur pourra créer, modifier et supprimer les catégories.
+________________________________________
+13. Gestion des images
+Formats acceptés :
+•	JPG
+•	JPEG
+•	PNG
+•	WebP
+Créer une structure propre ________________________________________
+14. Gestion des commandes
+Créer une page :
+/admin/commandes.php
+Afficher toutes les commandes sous forme de tableau responsive.
+Informations :
+•	Numéro de commande
+•	Date
+•	Heure
+•	Client
+•	Téléphone
+•	WhatsApp
+•	Mode de récupération
+•	Adresse
+•	Nombre d'articles
+•	Montant total
+•	Statut
+•	Actions
+Statuts :
+1.	En attente
+2.	Livrée
+3.	Annulée
+________________________________________
+15. Détail d'une commande
+Lorsqu'un administrateur clique sur une commande, afficher une page ou une fenêtre modale contenant toutes les informations.
+Afficher :
+Informations client
+•	Nom
+•	Téléphone
+•	WhatsApp
+•	Adresse
+•	Quartier
+•	Mode de récupération
+•	Instructions particulières
+Informations commande
+•	Numéro
+•	Date
+•	Heure
+•	Statut
+•	Liste complète des plats
+Pour chaque plat :
+•	Photo
+•	Nom
+•	Quantité
+•	Prix unitaire
+•	Sous-total
+Puis :
+•	Sous-total
+•	Total final
+Ajouter également :
+•	Bouton "Contacter via WhatsApp"
+•	Bouton "Modifier le statut"
+•	Bouton "Imprimer la commande"
+________________________________________
+16. Notifications des nouvelles commandes
+Mettre en place un système de notification pour les nouvelles commandes.
+Lorsqu'une nouvelle commande est enregistrée :
+•	l'administrateur doit être averti
+•	afficher une notification dans le dashboard
+•	afficher le nombre de nouvelles commandes dans le menu admin
+•	jouer éventuellement un son de notification
+Exemple :
+"🔔 Nouvelle commande CMD-2026-000125"
+IMPORTANT :
+Prévoir une architecture permettant d'utiliser des notifications push navigateur.
+Si les notifications push nécessitent une configuration supplémentaire, créer la structure nécessaire et documenter clairement les étapes de configuration.
+Prévoir également un système de fallback avec polling AJAX périodique si les notifications push ne sont pas disponibles.
+________________________________________
+17. Mise à jour des commandes sans rechargement
+Utiliser JavaScript/AJAX pour permettre à l'administrateur de :
+•	changer le statut
+•	actualiser les commandes
+•	recevoir les nouvelles commandes
+sans devoir recharger manuellement toute la page.
+Exemple :
+Une nouvelle commande arrive.
+Le dashboard affiche automatiquement :
+"1 nouvelle commande"
+________________________________________
+18. Recherche et filtres
+La page des commandes doit permettre de rechercher :
+•	Numéro de commande
+•	Nom du client
+•	Téléphone
+Ajouter des filtres :
+•	En attente
+•	Livrée
+•	Annulée
+________________________________________
+21. Sécurité
+Le projet doit respecter les bonnes pratiques de sécurité PHP/MySQL.
+Utiliser obligatoirement :
+•	PDO avec requêtes préparées
+•	Protection CSRF
+•	Validation serveur
+•	Échappement HTML avec htmlspecialchars()
+•	password_hash()
+•	password_verify()
+•	Sessions sécurisées
+•	Contrôle d'accès aux pages admin
+•	Protection des uploads
+•	Validation des fichiers
+•	Protection XSS
+•	Protection SQL Injection
+•	Vérification des permissions
+•	Aucun mot de passe ou secret directement dans le code source
+Ne jamais faire confiance aux données envoyées par JavaScript.
+Toutes les données importantes doivent être revérifiées côté serveur.
+________________________________________
+23. Interface administrateur
+L'administration doit être particulièrement agréable sur smartphone.
+Sur mobile :
+•	menu hamburger
+•	cartes statistiques empilées
+•	tableaux transformés en cartes lorsque nécessaire
+•	boutons suffisamment grands
+•	navigation simple
+•	commandes facilement accessibles
+Sur ordinateur :
+•	sidebar fixe
+•	dashboard avec statistiques
+•	tableaux complets
+•	espace de travail plus large
+________________________________________
+25. Important — fonctionnement WhatsApp
+Ne pas créer un faux système de paiement ou de messagerie WhatsApp.
+Le site doit utiliser WhatsApp comme moyen de communication final avec le restaurant.
+Le site :
+1.	collecte la commande
+2.	l'enregistre dans MySQL
+3.	génère le numéro de commande
+4.	prépare automatiquement le message WhatsApp
+5.	redirige le client vers WhatsApp
+6.	permet à l'administrateur de gérer la commande depuis son interface
+L'administrateur pourra ensuite confirmer les détails avec le client directement sur WhatsApp.
