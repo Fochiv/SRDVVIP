@@ -58,6 +58,7 @@
         </ul>
         <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="#reservation" class="btn btn-gold btn-sm" data-i18n="nav.reserve">Réserver</a>
+          <a href="cart.php" class="btn btn-outline-gold btn-sm cart-nav-link"><i class="fas fa-shopping-basket me-1"></i><span data-i18n="nav.cart">Panier</span> <span class="cart-count" id="cartCount" aria-label="Articles dans le panier">0</span></a>
           <a href="https://wa.me/237659763338" target="_blank" class="btn btn-whatsapp btn-sm">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
@@ -182,6 +183,7 @@
               <p data-i18n="menu.dakere.desc">Notre plat signature : du mil savamment préparé avec une sauce riche et épicée.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="1" data-cart-name="Dakéré" data-cart-price="1000" data-cart-image="SRD_VVIP/lait_dakere.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander du Dakéré" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -198,6 +200,7 @@
               <p data-i18n="menu.rizsen.desc">Riz parfumé cuisiné à la sénégalaise, savoureux et généreux.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="2" data-cart-name="Riz Sénégalais" data-cart-price="1000" data-cart-image="SRD_VVIP/riz_sénégalais.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander du Riz Sénégalais" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -214,6 +217,7 @@
               <p data-i18n="menu.rizb.desc">Riz blanc de qualité, parfumé et accompagné de sauces maison.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="3" data-cart-name="Riz Blanc Parfumé" data-cart-price="1000" data-cart-image="SRD_VVIP/riz_parfume.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander du Riz Blanc Parfumé" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -230,6 +234,7 @@
               <p data-i18n="menu.spag.desc">Pâtes savoureuses préparées avec une sauce maison généreuse.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="4" data-cart-name="Spaghetti Macaronis" data-cart-price="1000" data-cart-image="SRD_VVIP/spaghettis_macaronis.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander des Spaghetti Macaronis" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -246,6 +251,7 @@
               <p data-i18n="menu.plantain.desc">Plantains dorés accompagnés d'une viande tendre et bien assaisonnée.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="5" data-cart-name="Pommes Plantain Viande" data-cart-price="1000" data-cart-image="SRD_VVIP/pommes_plantain_viande.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander des Pommes Plantain Viande" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -263,6 +269,7 @@
               <p data-i18n="menu.poulet.desc">Poulet grillé ou braisé, mariné aux épices africaines et cuit à la perfection.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>3 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="6" data-cart-name="Poulet" data-cart-price="3000" data-cart-image="SRD_VVIP/poulet.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander du Poulet" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -279,6 +286,7 @@
               <p data-i18n="menu.frites.desc">Frites croustillantes et dorées, parfaites en accompagnement.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>500 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="7" data-cart-name="Frites" data-cart-price="500" data-cart-image="SRD_VVIP/frites.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander des Frites" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -295,6 +303,7 @@
               <p data-i18n="menu.eru.desc">Plat traditionnel camerounais aux légumes et viandes fumées, riche en saveurs.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 500 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="8" data-cart-name="Eru" data-cart-price="1500" data-cart-image="SRD_VVIP/eru.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander de l'Eru" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -311,6 +320,7 @@
               <p data-i18n="menu.couscous.desc">Couscous moelleux accompagné d'une sauce généreuse et de légumes.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>2 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="9" data-cart-name="Couscous" data-cart-price="2000" data-cart-image="SRD_VVIP/couscous.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander du Couscous" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -327,6 +337,7 @@
               <p data-i18n="menu.shawarma.desc">Shawarma généreux garni de viande tendre, légumes frais et sauces maison.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="10" data-cart-name="Shawarma" data-cart-price="1000" data-cart-image="SRD_VVIP/shawarma.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander un Shawarma" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -343,6 +354,7 @@
               <p data-i18n="menu.boissons.desc">Large choix de boissons fraîches, jus naturels et sodas pour accompagner votre repas.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>1 000 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="11" data-cart-name="Boissons" data-cart-price="1000" data-cart-image="SRD_VVIP/boissons.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander une Boisson" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -359,6 +371,7 @@
               <p data-i18n="menu.eau.desc">Eau minérale pure et fraîche pour rester hydraté tout au long du repas.</p>
               <div class="menu-footer">
                 <span class="menu-price">À partir de <strong>500 FCFA</strong></span>
+                <button type="button" class="btn-add-cart" data-cart-id="12" data-cart-name="Eau Minérale" data-cart-price="500" data-cart-image="SRD_VVIP/eau_pure.jpg"><i class="fas fa-cart-plus me-1"></i><span>Ajouter</span></button>
                 <a href="https://wa.me/237659763338?text=Je voudrais commander de l'Eau Minérale" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i></a>
               </div>
             </div>
@@ -848,6 +861,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

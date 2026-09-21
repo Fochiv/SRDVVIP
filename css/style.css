@@ -146,6 +146,100 @@ a { text-decoration: none; transition: all 0.3s ease; }
   color: #fff !important;
 }
 
+/* ---- Cart ---- */
+.cart-nav-link { white-space: nowrap; }
+.cart-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 99px;
+  background: var(--gold);
+  color: #111;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.cart-count.is-empty { opacity: 0.65; }
+.btn-add-cart {
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--gold);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-add-cart:hover { background: var(--gold); color: #111; transform: translateY(-2px); }
+.btn-add-cart:disabled { cursor: not-allowed; opacity: .5; border-color: var(--text-muted); color: var(--text-muted); }
+.btn-add-cart:disabled:hover { background: transparent; color: var(--text-muted); transform: none; }
+.cart-toast {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 2000;
+  max-width: min(90vw, 360px);
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background: var(--bg-card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  transform: translateY(1rem);
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.cart-toast.visible { opacity: 1; transform: translateY(0); }
+.cart-shell { padding: 150px 0 90px; min-height: 100vh; background: var(--bg); }
+.cart-panel {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.cart-panel h2 { font-size: 1.4rem; margin-bottom: 1.25rem; }
+.cart-panel-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.cart-line {
+  display: grid;
+  grid-template-columns: 68px 1fr auto auto auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.cart-line img { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; }
+.cart-line-info h3 { font-family: Poppins, sans-serif; font-size: 0.95rem; margin: 0 0 0.2rem; }
+.cart-line-info span { color: var(--text-muted); font-size: 0.78rem; }
+.quantity-control { display: inline-flex; align-items: center; gap: 0.65rem; }
+.quantity-control button {
+  width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%;
+  background: transparent; color: var(--text); cursor: pointer;
+}
+.quantity-control button:hover { border-color: var(--gold); color: var(--gold); }
+.cart-line-subtotal { white-space: nowrap; color: var(--gold); font-size: 0.85rem; }
+.cart-remove { border: 0; background: transparent; color: #d86a6a; cursor: pointer; padding: 0.4rem; }
+.cart-total-row { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.4rem; font-size: 1.1rem; }
+.cart-total-row strong { color: var(--gold); font-size: 1.3rem; }
+.form-hint, .checkout-secure { color: var(--text-muted); font-size: 0.82rem; }
+.checkout-form .form-control, .checkout-form .form-select { background: var(--input-bg); border-color: var(--input-border); color: var(--input-text); }
+.checkout-form .form-control:focus, .checkout-form .form-select:focus { border-color: var(--gold); box-shadow: 0 0 0 0.2rem rgba(212,175,55,0.15); }
+.checkout-secure { margin: 1rem 0 0; text-align: center; }
+.empty-cart { max-width: 620px; margin: 0 auto; padding: 4rem 1rem; text-align: center; border: 1px dashed var(--border); border-radius: 18px; }
+.empty-cart i { color: var(--gold); font-size: 3rem; margin-bottom: 1rem; }
+.empty-cart h2 { font-size: 1.5rem; }
+@media (max-width: 650px) {
+  .cart-line { grid-template-columns: 56px 1fr auto; }
+  .cart-line img { width: 56px; height: 56px; }
+  .cart-line-subtotal { grid-column: 2; }
+  .cart-remove { grid-column: 3; grid-row: 1; }
+  .quantity-control { grid-column: 2 / -1; justify-self: start; }
+}
+
 /* ---- Navbar ---- */
 #mainNav {
   background: var(--nav-bg);
