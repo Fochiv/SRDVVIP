@@ -11,10 +11,10 @@ try {
     $stats['menus'] = (int) $pdo->query('SELECT COUNT(*) FROM menus WHERE is_active = 1')->fetchColumn();
     $stats['pending'] = (int) $pdo->query("SELECT COUNT(*) FROM orders WHERE status = 'pending'")->fetchColumn();
     $stats['delivered'] = (int) $pdo->query("SELECT COUNT(*) FROM orders WHERE status = 'delivered'")->fetchColumn();
-    $stats['today'] = (int) $pdo->query('SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURDATE()')->fetchColumn();
+    $stats['today'] = (int) $pdo->query('SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURRENT_DATE')->fetchColumn();
     $recent = $pdo->query('SELECT id, order_number, customer_name, total_amount, status, created_at FROM orders ORDER BY id DESC LIMIT 8')->fetchAll();
 } catch (Throwable $error) {
-    $dbError = 'Connexion MySQL indisponible. Importez database/schema.sql puis vérifiez les variables DB_*.';
+    $dbError = 'Connexion à la base indisponible. Vérifiez la configuration de DATABASE_URL ou des variables DB_*.';
 }
 
 admin_header('Tableau de bord');

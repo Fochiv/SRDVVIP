@@ -12,7 +12,7 @@ if ($pdo) {
     $categories = $pdo->query('SELECT * FROM categories ORDER BY name')->fetchAll();
     $menus = $pdo->query('SELECT m.*, c.name category_name FROM menus m JOIN categories c ON c.id = m.category_id ORDER BY m.display_order, m.id')->fetchAll();
 } else {
-    $error = 'Connexion MySQL indisponible.';
+    $error = 'Connexion à la base indisponible.';
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && $pdo) {

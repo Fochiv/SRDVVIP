@@ -18,7 +18,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = (string) ($_POST['password'] ?? '');
         $configuredUser = env_value('SRDVVIP_ADMIN_USER', 'SRDVVIP');
         $passwordHash = env_value('SRDVVIP_ADMIN_PASSWORD_HASH');
-        $valid = $passwordHash && hash_equals($configuredUser, $username) && password_verify($password, $passwordHash);
+        $valid = $passwordHash
+            && hash_equals(strtolower($configuredUser), strtolower($username))
+            && password_verify($password, $passwordHash);
         if ($valid) {
             session_regenerate_id(true);
             $_SESSION['admin_authenticated'] = true;

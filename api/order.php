@@ -77,12 +77,17 @@ try {
     }
 
     $pdo->beginTransaction();
-    $insert = $pdo->prepare(
-        'INSERT INTO orders (order_number, customer_name, phone, whatsapp, recovery_mode, address, district, people_count, requested_time, instructions, total_amount)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
-    );
-    $insert->execute(['PENDING-' . bin2hex(random_bytes(8)), $name, $phone, $whatsapp, $mode, $address ?: null, $district ?: null, $people ?: null, $requestedTime ?: null, $instructions ?: null, $total]);
-    $orderId = (int) $pdo->lastInsertId();
+    $pendingNumber = 'PENDING-' . bin2hex(random_bytes(8));
+    $insertSql = 'INSERT INTO orders (order_number, customer_name, phone, whatsapp, recovery_mode, address, district, people_count, requested_time, instructions, total_amount)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    if ($pdo->getAttribute(PDO::ATTR_DRIVER_NAME) === 'pgsql') {
+        $insertSql .= ' RETURNING id';
+    }
+    $insert = $pdo->prepare($insertSql);
+    $insert->execute([$pendingNumber, $name, $phone, $whatsapp, $mode, $address ?: null, $district ?: null, $people ?: null, $requestedTime ?: null, $instructions ?: null, $total]);
+    $orderId = $pdo->getAttribute(PDO::ATTR_DRIVER_NAME) === 'pgsql'
+        ? (int) $insert->fetchColumn()
+        : (int) $pdo->lastInsertId();
     $orderNumber = sprintf('CMD-%s-%06d', date('Y'), $orderId);
     $pdo->prepare('UPDATE orders SET order_number = ? WHERE id = ?')->execute([$orderNumber, $orderId]);
 

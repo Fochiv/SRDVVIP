@@ -5,8 +5,8 @@ declare(strict_types=1);
  * Shared application bootstrap.
  *
  * Configuration is read from environment variables so credentials never live
- * in the repository. DATABASE_URL is supported for hosted MySQL services;
- * DB_* variables are useful for local development.
+ * in the repository. DATABASE_URL supports Replit PostgreSQL as well as hosted
+ * MySQL services; DB_* variables remain useful for local MySQL development.
  */
 date_default_timezone_set(getenv('APP_TIMEZONE') ?: 'Africa/Douala');
 
@@ -39,22 +39,31 @@ function db(): PDO
     }
 
     $databaseUrl = env_value('DATABASE_URL');
-    if ($databaseUrl && str_starts_with($databaseUrl, 'mysql://')) {
+    if ($databaseUrl && preg_match('/^(postgres(?:ql)?|pgsql):\\/\\//i', $databaseUrl)) {
+        $parts = parse_url($databaseUrl);
+        $host = $parts['host'] ?? '127.0.0.1';
+        $port = $parts['port'] ?? 5432;
+        $name = ltrim($parts['path'] ?? '', '/');
+        $user = rawurldecode($parts['user'] ?? '');
+        $password = rawurldecode($parts['pass'] ?? '');
+        $dsn = sprintf('pgsql:host=%s;port=%s;dbname=%s', $host, $port, $name);
+    } elseif ($databaseUrl && str_starts_with($databaseUrl, 'mysql://')) {
         $parts = parse_url($databaseUrl);
         $host = $parts['host'] ?? '127.0.0.1';
         $port = $parts['port'] ?? 3306;
         $name = ltrim($parts['path'] ?? '', '/');
-        $user = $parts['user'] ?? '';
-        $password = $parts['pass'] ?? '';
+        $user = rawurldecode($parts['user'] ?? '');
+        $password = rawurldecode($parts['pass'] ?? '');
+        $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $name);
     } else {
         $host = env_value('DB_HOST', '127.0.0.1');
         $port = env_value('DB_PORT', '3306');
         $name = env_value('DB_NAME', 'srdvvip');
         $user = env_value('DB_USER', 'root');
         $password = env_value('DB_PASSWORD', '');
+        $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $name);
     }
 
-    $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $name);
     $pdo = new PDO($dsn, $user, $password, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,

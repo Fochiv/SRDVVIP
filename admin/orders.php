@@ -27,7 +27,7 @@ if ($pdo) {
     $statement->execute($params);
     $orders = $statement->fetchAll();
 } else {
-    $error = 'Connexion MySQL indisponible.';
+    $error = 'Connexion à la base indisponible.';
 }
 
 $labels = ['pending' => 'En attente', 'delivered' => 'Livrée', 'cancelled' => 'Annulée'];
