@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS srdvvip CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE srdvvip;
+-- Select the target database in phpMyAdmin before importing this file.
+-- Hostinger does not allow applications to create or switch databases here.
 
 CREATE TABLE IF NOT EXISTS categories (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 
 try {
     $menus = db()->query(
-        'SELECT m.id, m.name, m.price, m.image_path, m.is_active, c.slug category
+        'SELECT m.id, m.name, m.description, m.price, m.image_path, m.is_active, c.slug category
          FROM menus m JOIN categories c ON c.id = m.category_id
          ORDER BY m.display_order, m.id'
     )->fetchAll();

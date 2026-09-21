@@ -40,24 +40,85 @@
   }
 
   function syncAvailableMenus() {
-    if (!document.querySelector('.btn-add-cart')) return;
+    const menuGrid = document.getElementById('menuGrid');
+    if (!menuGrid || !document.querySelector('.btn-add-cart')) return;
     fetch('api/menu.php', { headers: { Accept: 'application/json' } })
       .then((response) => response.ok ? response.json() : null)
       .then((result) => {
         if (!result || !result.ok) return;
         result.menus.forEach((menu) => {
-          const buttons = document.querySelectorAll(`.btn-add-cart[data-cart-id="${menu.id}"]`);
+          let buttons = [...document.querySelectorAll(`.btn-add-cart[data-cart-id="${menu.id}"]`)];
+          if (!buttons.length) {
+            buttons = [...document.querySelectorAll('.btn-add-cart')].filter(
+              (button) => button.dataset.cartName?.trim().toLocaleLowerCase() === menu.name.trim().toLocaleLowerCase(),
+            );
+          }
           buttons.forEach((button) => {
             button.dataset.cartName = menu.name;
+            button.dataset.cartId = menu.id;
             button.dataset.cartPrice = menu.price;
             button.dataset.cartImage = menu.image_path;
             button.disabled = !Number(menu.is_active);
             button.setAttribute('aria-disabled', String(!Number(menu.is_active)));
             button.querySelector('span').textContent = Number(menu.is_active) ? 'Ajouter' : 'Indisponible';
+            updateMenuCard(button.closest('.menu-item'), menu);
           });
+          if (!buttons.length && Number(menu.is_active)) appendMenuCard(menu, menuGrid);
         });
       })
       .catch(() => {});
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;',
+    }[character]));
+  }
+
+  function updateMenuCard(card, menu) {
+    if (!card) return;
+    card.dataset.category = menu.category;
+    const image = card.querySelector('.menu-img-wrap img');
+    const title = card.querySelector('.menu-body h4');
+    const description = card.querySelector('.menu-body p');
+    const price = card.querySelector('.menu-price strong');
+    const whatsapp = card.querySelector('.btn-order');
+    if (image) {
+      image.src = menu.image_path;
+      image.alt = menu.name;
+    }
+    if (title) title.textContent = menu.name;
+    if (description && menu.description) description.textContent = menu.description;
+    if (price) price.textContent = `${Number(menu.price).toLocaleString('fr-FR')} FCFA`;
+    if (whatsapp) {
+      whatsapp.href = `https://wa.me/237659763338?text=${encodeURIComponent(`Je voudrais commander ${menu.name}`)}`;
+    }
+  }
+
+  function appendMenuCard(menu, menuGrid) {
+    const item = document.createElement('div');
+    item.className = 'col-sm-6 col-lg-4 menu-item';
+    item.dataset.category = menu.category;
+    item.innerHTML = `
+      <div class="menu-card">
+        <div class="menu-img-wrap">
+          <img src="${escapeHtml(menu.image_path)}" alt="${escapeHtml(menu.name)}">
+        </div>
+        <div class="menu-body">
+          <h4>${escapeHtml(menu.name)}</h4>
+          <p>${escapeHtml(menu.description)}</p>
+          <div class="menu-footer">
+            <span class="menu-price">À partir de <strong>${Number(menu.price).toLocaleString('fr-FR')} FCFA</strong></span>
+            <button type="button" class="btn-add-cart" data-cart-id="${escapeHtml(menu.id)}" data-cart-name="${escapeHtml(menu.name)}" data-cart-price="${escapeHtml(menu.price)}" data-cart-image="${escapeHtml(menu.image_path)}">
+              <i class="fas fa-cart-plus me-1"></i><span>Ajouter</span>
+            </button>
+            <a href="https://wa.me/237659763338?text=${encodeURIComponent(`Je voudrais commander ${menu.name}`)}" target="_blank" class="btn-order" rel="noopener">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>`;
+    menuGrid.appendChild(item);
   }
 
   function showToast(message) {

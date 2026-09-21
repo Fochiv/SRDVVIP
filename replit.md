@@ -33,6 +33,11 @@ php -r "echo password_hash('your-password', PASSWORD_DEFAULT), PHP_EOL;"
 4. Set `SRDVVIP_ADMIN_USER` and `SRDVVIP_ADMIN_PASSWORD_HASH` in the Replit
    environment.
 
+For Hostinger shared hosting, copy `config/local.php.example` to
+`config/local.php` and fill in the Hostinger MySQL credentials and admin hash.
+The `config/` directory is protected by `.htaccess`. See `HOSTINGER.md` for
+the full deployment procedure.
+
 The public static menu intentionally remains available while MySQL is not
 configured. Once the database is available, `api/menu.php` synchronizes
 availability, names, prices, and images with the public add-to-cart buttons.

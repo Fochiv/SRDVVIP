@@ -8,6 +8,23 @@ declare(strict_types=1);
  * in the repository. DATABASE_URL supports Replit PostgreSQL as well as hosted
  * MySQL services; DB_* variables remain useful for local MySQL development.
  */
+/*
+ * Hostinger/shared-hosting fallback:
+ * config/local.php may return an array of private values when the host does
+ * not expose environment variables. Keep that file outside version control.
+ */
+$localConfigPath = __DIR__ . '/local.php';
+if (is_file($localConfigPath)) {
+    $localConfig = require $localConfigPath;
+    if (is_array($localConfig)) {
+        foreach ($localConfig as $key => $value) {
+            if (is_string($key) && is_scalar($value) && (getenv($key) === false || getenv($key) === '')) {
+                putenv($key . '=' . (string) $value);
+            }
+        }
+    }
+}
+
 date_default_timezone_set(getenv('APP_TIMEZONE') ?: 'Africa/Douala');
 
 if (session_status() !== PHP_SESSION_ACTIVE) {

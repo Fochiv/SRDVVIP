@@ -1,0 +1,15 @@
+<?php
+/*
+ * Copy this file to config/local.php on Hostinger and replace every value.
+ * Never commit config/local.php or paste its contents into public pages.
+ */
+return [
+    'DB_HOST' => 'localhost',
+    'DB_PORT' => '3306',
+    'DB_NAME' => 'YOUR_HOSTINGER_DATABASE',
+    'DB_USER' => 'YOUR_HOSTINGER_DATABASE_USER',
+    'DB_PASSWORD' => 'YOUR_HOSTINGER_DATABASE_PASSWORD',
+    'SRDVVIP_ADMIN_USER' => 'SRDVVIP',
+    'SRDVVIP_ADMIN_PASSWORD_HASH' => 'PASTE_A_PASSWORD_HASH_HERE',
+    'APP_TIMEZONE' => 'Africa/Douala',
+];

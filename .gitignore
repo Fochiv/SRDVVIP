@@ -1,0 +1,5 @@
+/config/local.php
+/uploads/menu/*
+!/uploads/menu/.gitkeep
+/.env
+*.sql.bak
