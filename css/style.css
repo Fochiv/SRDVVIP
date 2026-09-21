@@ -165,17 +165,38 @@ a { text-decoration: none; transition: all 0.3s ease; }
 .btn-add-cart {
   border: 1px solid var(--gold);
   border-radius: 999px;
-  background: transparent;
-  color: var(--gold);
-  padding: 0.35rem 0.65rem;
-  font-size: 0.72rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #111;
+  padding: 0.48rem 0.75rem;
+  font-size: 0.76rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.25s ease;
+  min-height: 36px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(212,175,55,.22);
 }
-.btn-add-cart:hover { background: var(--gold); color: #111; transform: translateY(-2px); }
+.btn-add-cart:hover { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: #111; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212,175,55,.4); }
 .btn-add-cart:disabled { cursor: not-allowed; opacity: .5; border-color: var(--text-muted); color: var(--text-muted); }
 .btn-add-cart:disabled:hover { background: transparent; color: var(--text-muted); transform: none; }
+.menu-cart-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 1.75rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-card);
+  box-shadow: 0 5px 18px rgba(0,0,0,.12);
+}
+.menu-cart-summary { display: flex; align-items: center; gap: .7rem; }
+.menu-cart-summary strong, .menu-cart-summary small { display: block; }
+.menu-cart-summary strong { font-size: .9rem; color: var(--text); }
+.menu-cart-summary small { color: var(--text-muted); font-size: .72rem; }
+.menu-cart-icon { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(212,175,55,.16); color: var(--gold); }
 .cart-toast {
   position: fixed;
   right: 1.25rem;
@@ -520,15 +541,23 @@ a { text-decoration: none; transition: all 0.3s ease; }
 }
 
 .menu-footer {
-  display: flex; justify-content: space-between; align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  grid-template-rows: auto auto;
+  align-items: center;
+  gap: .65rem .75rem;
 }
 .menu-price {
+  grid-column: 1 / -1;
   font-size: 0.85rem;
   color: var(--text-muted);
+  margin-bottom: .05rem;
 }
 .menu-price strong { color: var(--gold); font-size: 0.95rem; }
 
 .btn-order {
+  grid-column: 2;
+  grid-row: 2;
   width: 36px; height: 36px;
   background: #25D366;
   color: #fff !important;

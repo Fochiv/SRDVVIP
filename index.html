@@ -55,6 +55,7 @@
           <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#temoignages" data-i18n="nav.testimonials">Témoignages</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li class="nav-item d-lg-none"><a class="nav-link" href="cart.php"><i class="fas fa-shopping-basket me-2"></i><span data-i18n="nav.cart">Panier</span> <span class="cart-count" aria-label="Articles dans le panier">0</span></a></li>
         </ul>
         <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="#reservation" class="btn btn-gold btn-sm" data-i18n="nav.reserve">Réserver</a>
@@ -168,6 +169,13 @@
         <button class="filter-btn active" data-filter="all" data-i18n="filter.all">Tous</button>
         <button class="filter-btn" data-filter="plat" data-i18n="filter.dishes">Plats</button>
         <button class="filter-btn" data-filter="boisson" data-i18n="filter.drinks">Boissons</button>
+      </div>
+      <div class="menu-cart-bar" data-aos="fade-up">
+        <div class="menu-cart-summary">
+          <span class="menu-cart-icon"><i class="fas fa-shopping-basket"></i></span>
+          <span><strong>Votre panier</strong><small><span class="cart-count">0</span> article(s) sélectionné(s)</small></span>
+        </div>
+        <a href="cart.php" class="btn btn-gold btn-sm">Voir mon panier <i class="fas fa-arrow-right ms-1"></i></a>
       </div>
 
       <div class="row g-4" id="menuGrid">
