@@ -92,41 +92,55 @@ admin_header('Menus & catégories');
 <div class="row g-4">
   <div class="col-xl-5">
     <section class="admin-panel">
-      <div class="admin-panel-heading"><h2><?= $editing ? 'Modifier le menu' : 'Ajouter un menu' ?></h2><?php if ($editing): ?><a href="menus.php" class="btn btn-sm btn-outline-gold">Annuler</a><?php endif; ?></div>
-      <form method="post" enctype="multipart/form-data">
-        <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
-        <input type="hidden" name="action" value="save">
-        <input type="hidden" name="id" value="<?= (int) ($editing['id'] ?? 0) ?>">
-        <label class="form-label">Nom du plat *</label>
-        <input class="form-control mb-3" name="name" required value="<?= e($editing['name'] ?? '') ?>">
-        <label class="form-label">Description</label>
-        <textarea class="form-control mb-3" name="description" rows="3"><?= e($editing['description'] ?? '') ?></textarea>
-        <div class="row g-3">
-          <div class="col-6"><label class="form-label">Prix (FCFA) *</label><input class="form-control" type="number" min="1" name="price" required value="<?= (int) ($editing['price'] ?? 1000) ?>"></div>
-          <div class="col-6"><label class="form-label">Ordre</label><input class="form-control" type="number" name="display_order" value="<?= (int) ($editing['display_order'] ?? 0) ?>"></div>
-        </div>
-        <label class="form-label mt-3">Catégorie *</label>
-        <select class="form-select mb-3" name="category_id" required>
-          <option value="">Choisir</option>
-          <?php foreach ($categories as $category): ?><option value="<?= (int) $category['id'] ?>" <?= ((int) ($editing['category_id'] ?? 0) === (int) $category['id']) ? 'selected' : '' ?>><?= e($category['name']) ?></option><?php endforeach; ?>
-        </select>
-        <label class="form-label">Chemin de l’image <?= $editing ? '' : '*' ?></label>
-        <input class="form-control mb-2" name="image_path" placeholder="SRD_VVIP/poulet.jpg" value="<?= e($editing['image_path'] ?? '') ?>">
-        <label class="form-label">ou téléverser une image</label>
-        <input class="form-control mb-3" type="file" name="image" accept=".jpg,.jpeg,.png,.webp">
-        <label class="form-check mb-3"><input class="form-check-input" type="checkbox" name="is_active" <?= (!$editing || $editing['is_active']) ? 'checked' : '' ?>> <span class="form-check-label">Disponible à la commande</span></label>
-        <button class="btn btn-gold w-100" type="submit"><?= $editing ? 'Enregistrer les modifications' : 'Ajouter le menu' ?></button>
-      </form>
+      <div class="admin-panel-heading">
+        <h2><?= $editing ? 'Modifier le menu' : 'Menus enregistrés' ?></h2>
+        <?php if ($editing): ?>
+          <a href="menus.php" class="btn btn-sm btn-outline-gold">Annuler</a>
+        <?php else: ?>
+          <button class="btn btn-sm btn-gold" type="button" data-admin-panel-toggle="#menuFormPanel" aria-expanded="<?= $menuFormOpen ? 'true' : 'false' ?>"><i class="fas fa-plus me-1"></i>Ajouter un menu</button>
+        <?php endif; ?>
+      </div>
+      <div id="menuFormPanel" class="<?= $menuFormOpen ? '' : 'd-none' ?> admin-form-panel">
+        <form method="post" enctype="multipart/form-data">
+          <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>">
+          <input type="hidden" name="action" value="save">
+          <input type="hidden" name="id" value="<?= (int) ($editing['id'] ?? 0) ?>">
+          <label class="form-label">Nom du plat *</label>
+          <input class="form-control mb-3" name="name" required value="<?= e($editing['name'] ?? '') ?>">
+          <label class="form-label">Description</label>
+          <textarea class="form-control mb-3" name="description" rows="3"><?= e($editing['description'] ?? '') ?></textarea>
+          <div class="row g-3">
+            <div class="col-6"><label class="form-label">Prix (FCFA) *</label><input class="form-control" type="number" min="1" name="price" required value="<?= (int) ($editing['price'] ?? 1000) ?>"></div>
+            <div class="col-6"><label class="form-label">Ordre</label><input class="form-control" type="number" name="display_order" value="<?= (int) ($editing['display_order'] ?? 0) ?>"></div>
+          </div>
+          <label class="form-label mt-3">Catégorie *</label>
+          <select class="form-select mb-3" name="category_id" required>
+            <option value="">Choisir</option>
+            <?php foreach ($categories as $category): ?><option value="<?= (int) $category['id'] ?>" <?= ((int) ($editing['category_id'] ?? 0) === (int) $category['id']) ? 'selected' : '' ?>><?= e($category['name']) ?></option><?php endforeach; ?>
+          </select>
+          <label class="form-label">Chemin de l’image <?= $editing ? '' : '*' ?></label>
+          <input class="form-control mb-2" name="image_path" placeholder="SRD_VVIP/poulet.jpg" value="<?= e($editing['image_path'] ?? '') ?>">
+          <label class="form-label">ou téléverser une image</label>
+          <input class="form-control mb-3" type="file" name="image" accept=".jpg,.jpeg,.png,.webp">
+          <label class="form-check mb-3"><input class="form-check-input" type="checkbox" name="is_active" <?= (!$editing || $editing['is_active']) ? 'checked' : '' ?>> <span class="form-check-label">Disponible à la commande</span></label>
+          <button class="btn btn-gold w-100" type="submit"><?= $editing ? 'Enregistrer les modifications' : 'Ajouter le menu' ?></button>
+        </form>
+      </div>
     </section>
   </div>
   <div class="col-xl-7">
     <section class="admin-panel mb-4">
-      <div class="admin-panel-heading"><h2>Catégories</h2></div>
-      <form method="post" class="row g-2 mb-3">
-        <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><input type="hidden" name="action" value="category">
-        <div class="col"><input class="form-control" name="name" placeholder="Nouvelle catégorie" required></div>
-        <div class="col-auto"><button class="btn btn-outline-gold" type="submit">Ajouter</button></div>
-      </form>
+      <div class="admin-panel-heading">
+        <h2>Catégories</h2>
+        <button class="btn btn-sm btn-outline-gold" type="button" data-admin-panel-toggle="#categoryFormPanel" aria-expanded="<?= $categoryFormOpen ? 'true' : 'false' ?>"><i class="fas fa-plus me-1"></i>Ajouter une catégorie</button>
+      </div>
+      <div id="categoryFormPanel" class="<?= $categoryFormOpen ? '' : 'd-none' ?> admin-form-panel">
+        <form method="post" class="row g-2 mb-3">
+          <input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><input type="hidden" name="action" value="category">
+          <div class="col"><input class="form-control" name="name" placeholder="Nouvelle catégorie" required></div>
+          <div class="col-auto"><button class="btn btn-outline-gold" type="submit">Ajouter</button></div>
+        </form>
+      </div>
       <div class="d-flex flex-wrap gap-2"><?php foreach ($categories as $category): ?><form method="post" onsubmit="return confirm('Supprimer cette catégorie ?')"><input type="hidden" name="csrf_token" value="<?= e(csrf_token()) ?>"><input type="hidden" name="action" value="delete_category"><input type="hidden" name="category_id" value="<?= (int) $category['id'] ?>"><button class="btn btn-sm btn-outline-secondary" type="submit"><?= e($category['name']) ?> ×</button></form><?php endforeach; ?></div>
     </section>
     <section class="admin-panel">
@@ -137,4 +151,14 @@ admin_header('Menus & catégories');
     </section>
   </div>
 </div>
+<script>
+  document.querySelectorAll('[data-admin-panel-toggle]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const panel = document.querySelector(button.dataset.adminPanelToggle);
+      if (!panel) return;
+      const isHidden = panel.classList.toggle('d-none');
+      button.setAttribute('aria-expanded', String(!isHidden));
+    });
+  });
+</script>
 <?php admin_footer(); ?>
